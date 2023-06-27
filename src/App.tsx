@@ -26,7 +26,7 @@ function App() {
     <div className="App">
       <input value={query} onChange={(e) => setQuery(e.target.value)} />
       <div>
-        {products.map((product, index) => {
+        {products.length !== 0 ? products.map((product, index) => {
           if (index === products.length - 1) {
             return (
               <div
@@ -56,7 +56,7 @@ function App() {
               <img alt="" src={product.images[0]} width={100} height={100} />
             </div>
           );
-        })}
+        }): <p>Không tìm thấy sản phẩm</p>}
       </div>
     </div>
   );
